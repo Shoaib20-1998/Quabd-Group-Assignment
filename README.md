@@ -73,11 +73,16 @@ This project is built with the following technologies:
 
 ## Screenshots
 
-![Landing Page](screenshots/landing-page.png)
-![Job Listings](screenshots/job-listings.png)
-![Job Details](screenshots/job-details.png)
-![Application Form](screenshots/application-form.png)
-![Success Page](screenshots/success-page.png)
+![Landing Page](https://github.com/Shoaib20-1998/Quabd-Group-Assignment/assets/112754545/c0bf0e64-4c61-4d62-82b0-49c35a73da16)
+
+![Job Listings](https://github.com/Shoaib20-1998/Quabd-Group-Assignment/assets/112754545/7e0a3faa-304d-4676-9139-b9d950864905)
+
+![Job Details](https://github.com/Shoaib20-1998/Quabd-Group-Assignment/assets/112754545/25d62cb5-db9d-4000-8095-f18b3fc7ac2c)
+
+![Application Form](https://github.com/Shoaib20-1998/Quabd-Group-Assignment/assets/112754545/ae14181d-c685-481c-a6d5-10d41eddb2cd)
+
+![Success Page](https://github.com/Shoaib20-1998/Quabd-Group-Assignment/assets/112754545/f0d9e77c-84bc-47ab-b1a1-65d96528fe3e)
+
 
 ## Contributors
 
