@@ -6,7 +6,7 @@ const SuccessContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 30vh;
 `;
 
 const SuccessCard = styled.div`
@@ -37,23 +37,81 @@ const BackButton = styled.button`
   font-size: 18px;
   border-radius: 5px;
   cursor: pointer;
-
   &:hover {
     background-color: #0f4782;
   }
 `;
 
 function Success() {
-  const navigate=useNavigate()
+  const navigate = useNavigate()
+  const data = JSON.parse(localStorage.getItem('job'))
   return (
-    <SuccessContainer>
-    <SuccessCard>
-      <SuccessTitle>Application Submitted Successfully!</SuccessTitle>
-      <SuccessText>Your application has been received and is under review.</SuccessText>
-      <BackButton onClick={() => navigate('/')}>Back to Job Listing</BackButton>
-    </SuccessCard>
-  </SuccessContainer>
+    <>
+     <Container>
+      <Header>
+        <h1>Application Submitted Successfully!</h1>
+        <p>Here are your applied jobs:</p>
+      </Header>
+      <AppliedJobsList>
+        
+          <AppliedJobItem >
+            <JobTitle>{data?.title}</JobTitle>
+             <Company>{data?.company?.display_name}</Company>
+            <DateApplied>Applied on {data?.created}</DateApplied> 
+          </AppliedJobItem>
+      
+      </AppliedJobsList>
+    </Container>
+      <SuccessContainer>
+        <SuccessCard>
+          <SuccessTitle>Application Submitted Successfully!</SuccessTitle>
+          <SuccessText>Your application has been received and is under review.</SuccessText>
+          <BackButton onClick={() => navigate('/')}>Back to Job Listing</BackButton>
+        </SuccessCard>
+      </SuccessContainer>
+    </>
   )
 }
 
 export default Success
+
+
+const Container = styled.div`
+  padding: 20px;
+  text-align: center;
+  width:400px;
+  margin: auto;
+`;
+
+const Header = styled.div`
+  margin-bottom: 20px;
+`;
+
+const AppliedJobsList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+`;
+
+const AppliedJobItem = styled.li`
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+`;
+
+const JobTitle = styled.h2`
+  margin: 0;
+`;
+
+const Company = styled.p`
+  margin: 0;
+  color: #555;
+`;
+
+const DateApplied = styled.p`
+  margin: 0;
+  color: #888;
+`;

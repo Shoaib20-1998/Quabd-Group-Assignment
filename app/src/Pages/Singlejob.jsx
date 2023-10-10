@@ -55,12 +55,12 @@ const JobSalary = styled.p`
   font-size: 16px;
   margin-top: 10px;
 `;
+
+
 function Singlejob() {
   const[job,setSingleJob]=useState()
   const { isAuth }= useSelector((state)=>state.Auth)
   let {jobId}  = useParams();
- 
-  
   const FetchSingleJob=()=>{
     axios.get(`https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=869e42fd&app_key=99c39364812e7279f7060aa8f1331cde&what=${jobId}`)
     .then((res)=>setSingleJob(res.data?.results[0]))
@@ -70,6 +70,11 @@ function Singlejob() {
     FetchSingleJob()
   },[])
 
+  const Handleclick=()=>{
+    if(isAuth){
+      localStorage.setItem('job',JSON.stringify(job))
+    }
+  }
   
 
   return (
@@ -87,7 +92,7 @@ function Singlejob() {
       <JobSalary>
         Salary Range: ${job?.salary_min.toFixed(2)} - ${job?.salary_max.toFixed(2)}
       </JobSalary>
-     <Link to={`/apply/${job?.id}`}> <ApplyButton>Apply Now</ApplyButton></Link> 
+     <Link to={`/apply/${job?.id}`}> <ApplyButton onClick={Handleclick}>Apply Now</ApplyButton></Link> 
     </JobCard>
   </JobDetailsContainer>
   )

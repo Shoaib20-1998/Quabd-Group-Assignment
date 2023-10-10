@@ -56,7 +56,6 @@ export default function LoginCard() {
           navigate(path)
         } else {
           alert('Wrong credential')
-          dispatch(AuthenticatonFailed())
         }
       } else {
         alert('Email is not registered')

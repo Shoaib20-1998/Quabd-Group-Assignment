@@ -68,13 +68,15 @@ function Jobapply() {
     name:"",
     email:"",
     cover:"",
-    resume:""
+    resume:"",
+    coverletter:""
   }
   const [spinner, setspinner] = useState(false)
   const [submitdata,setsubmitdata]=useState(init)
   const navigate=useNavigate()
-  const handlesubmit = () => {
-    if(submitdata.name==""||submitdata.email==""||submitdata.cover==""||submitdata.resume==""){
+  const handlesubmit = (e) => {
+    e.preventDefault()
+    if(submitdata.name==""||submitdata.email==""||submitdata.cover==""||submitdata.resume==""||submitdata.coverletter==""){
       alert('Please Fill All the details')
     }else{
       setspinner(true)
@@ -91,7 +93,7 @@ function Jobapply() {
     
   }
 
-  console.log(submitdata)
+
   return (
     <FormContainer>
       <FormCard>
@@ -117,6 +119,10 @@ function Jobapply() {
           <div>
             <FormLabel>Upload Resume:</FormLabel>
             <FormInput value={submitdata.resume} name='resume' onChange={handlechange} type="file" accept=".pdf,.doc,.docx" required />
+          </div>
+          <div>
+            <FormLabel>Upload Cover Letter:</FormLabel>
+            <FormInput value={submitdata.coverletter} name='coverletter' onChange={handlechange} type="file" accept=".pdf,.doc,.docx" required />
           </div>
           <FormButton onClick={handlesubmit}>
             {spinner ?<Spinner color='white' />:"Submit"}</FormButton>
