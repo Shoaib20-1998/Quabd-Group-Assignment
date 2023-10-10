@@ -2,7 +2,7 @@
 
 ## Deployed Link:- https://jobapply.vercel.app/
 
-## Github API's base url:- https://api.adzuna.com
+## job API's base url:- https://api.adzuna.com
 
 ## Table of Contents
 - [Introduction](#introduction)
