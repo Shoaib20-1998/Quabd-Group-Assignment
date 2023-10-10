@@ -1,5 +1,9 @@
 # Job Search Portal
 
+## Deployed Link:- https://jobapply.vercel.app/
+
+## Github API's base url:- https://api.adzuna.com
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Assignment Overview](#assignment-overview)
